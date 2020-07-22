@@ -10,5 +10,5 @@ pollutantmean <- function(directory,pollutant,id=1:332) {
                         Pmean <- mean(Pollutiondf$nitrate, na.rm = T)
                 }
         }
-        print(Pmean)
+        Pmean
 }
