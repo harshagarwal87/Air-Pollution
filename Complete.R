@@ -12,9 +12,12 @@ complete <- function(directory, id = 1:332) {
         ## ...
         ## where 'id' is the monitor ID number and 'nobs' is the
         ## number of complete cases
-        Pfiles <- list.files(path=directory, pattern = "*.csv*", full.names = T)
+        
         Pollutiondf <- data.frame()
         nobsVector <- vector("numeric")
+        
+        Pfiles <- list.files(path=directory, pattern = "*.csv*", full.names = T)
+        
         for (i in id) {
                 Pollutiondf <- read.csv(Pfiles[i])
                 nobsSum <- sum(complete.cases(Pollutiondf))
